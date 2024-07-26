@@ -1,8 +1,22 @@
+import {HfInference} from "@huggingface/inference";
+import dotenv from "dotenv";
+
+
+dotenv.config();
+
+const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
+
+const inference = new HfInference(HF_ACCESS_TOKEN);
+
+
 const data = JSON.parse(localStorage.getItem('intelligenceScores'));
+
 
 const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
 
 console.log(intelligenceScores);
+
+document.getElementById('header').textContent = localStorage.getItem('userName') + "'s Test Result";
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -62,5 +76,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         function resetPage() {
             localStorage.removeItem('intelligenceScores');
+            localStorage.removeItem('userName');
             window.location.href = 'index.html'; // Adjust this URL to your main page
         };
