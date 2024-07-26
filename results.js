@@ -1,12 +1,14 @@
-import {HfInference} from "@huggingface/inference";
-import dotenv from "dotenv";
+// import {HfInference} from "@huggingface/inference";
+// import dotenv from "dotenv";
 
 
-dotenv.config();
+// dotenv.config();
 
-const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
+// const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
 
-const inference = new HfInference(HF_ACCESS_TOKEN);
+// const inference = new HfInference(HF_ACCESS_TOKEN);
+
+
 
 
 const data = JSON.parse(localStorage.getItem('intelligenceScores'));
