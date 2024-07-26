@@ -4,10 +4,6 @@ const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
 
 console.log(intelligenceScores);
 
-// Logic to create and display charts using a charting library (e.g., Chart.js)
-// ...
-
-
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -63,3 +59,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             });
         });
+
+        function resetPage() {
+            localStorage.removeItem('intelligenceScores');
+            window.location.href = 'index.html'; // Adjust this URL to your main page
+        };
