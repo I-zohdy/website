@@ -8,13 +8,19 @@
 
 // const inference = new HfInference(HF_ACCESS_TOKEN);
 
-
-
-
 const data = JSON.parse(localStorage.getItem('intelligenceScores'));
+if(data == null) { 
+    window.location.href = 'index.html';
+}
+
+
+
 
 
 const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
+
+console.log(intelligenceScores)
+
 
 console.log(intelligenceScores);
 
