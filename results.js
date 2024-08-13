@@ -1,12 +1,3 @@
-// import {HfInference} from "@huggingface/inference";
-// import dotenv from "dotenv";
-
-
-// dotenv.config();
-
-// const HF_ACCESS_TOKEN = process.env.HF_ACCESS_TOKEN;
-
-// const inference = new HfInference(HF_ACCESS_TOKEN);
 
 const data = JSON.parse(localStorage.getItem('intelligenceScores'));
 if(data == null) { 
@@ -14,15 +5,10 @@ if(data == null) {
 }
 
 
-
-
-
 const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
 
-console.log(intelligenceScores)
-
-
 console.log(intelligenceScores);
+
 
 document.getElementById('header').textContent = localStorage.getItem('userName') + "'s Test Result";
 
@@ -36,14 +22,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
  
              // Colors for each bar
              const colors = [
-                 'rgba(255, 99, 132, 0.2)',
-                 'rgba(54, 162, 235, 0.2)',
-                 'rgba(255, 206, 86, 0.2)',
-                 'rgba(75, 192, 192, 0.2)',
-                 'rgba(153, 102, 255, 0.2)',
-                 'rgba(255, 159, 64, 0.2)',
-                 'rgba(100, 149, 237, 0.2)',
-                 'rgba(60, 179, 113, 0.2)'
+                 'rgba(255, 99, 132)',
+                 'rgba(54, 162, 235)',
+                 'rgba(255, 206, 86)',
+                 'rgba(75, 192, 192)',
+                 'rgba(153, 102, 255)',
+                 'rgba(255, 159, 64)',
+                 'rgba(100, 149, 237)',
+                 'rgba(60, 179, 113)'
              ];
  
              const borderColors = [
