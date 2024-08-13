@@ -26,24 +26,7 @@
                 { text: "No, it's difficult for me", value: 1 }
             ]
         },
-        {
-            intelligence: "Linguistic",
-            question: "How well do you express yourself verbally?",
-            options: [
-                { text: "Very well", value: 3 },
-                { text: "Fairly well", value: 2 },
-                { text: "I struggle with it", value: 1 }
-            ]
-        },
-        {
-            intelligence: "Linguistic",
-            question: "Do you often find yourself playing with words, like making puns or rhymes?",
-            options: [
-                { text: "Often", value: 3 },
-                { text: "Sometimes", value: 2 },
-                { text: "Rarely", value: 1 }
-            ]
-        },
+
         {
             intelligence: "LogicalMathematical",
             question: "Do you enjoy solving puzzles and brain teasers?",
@@ -71,24 +54,7 @@
                 { text: "Rarely", value: 1 }
             ]
         },
-        {
-            intelligence: "LogicalMathematical",
-            question: "How good are you at estimating things, like quantities or distances?",
-            options: [
-                { text: "Very good", value: 3 },
-                { text: "Fairly good", value: 2 },
-                { text: "Not good", value: 1 }
-            ]
-        },
-        {
-            intelligence: "LogicalMathematical",
-            question: "Do you enjoy logical games like chess or Sudoku?",
-            options: [
-                { text: "Yes, very much", value: 3 },
-                { text: "Sometimes", value: 2 },
-                { text: "No, not really", value: 1 }
-            ]
-        },
+
         {
             intelligence: "Spatial",
             question: "Do you enjoy drawing or painting?",
@@ -116,24 +82,7 @@
                 { text: "Rarely", value: 1 }
             ]
         },
-        {
-            intelligence: "Spatial",
-            question: "How do you feel about activities like building models or assembling things?",
-            options: [
-                { text: "I love them", value: 3 },
-                { text: "They're okay", value: 2 },
-                { text: "I don't like them", value: 1 }
-            ]
-        },
-        {
-            intelligence: "Spatial",
-            question: "Are you good at solving visual puzzles, like mazes or jigsaw puzzles?",
-            options: [
-                { text: "Very good", value: 3 },
-                { text: "Fairly good", value: 2 },
-                { text: "Not good", value: 1 }
-            ]
-        },
+
         {
             intelligence: "BodilyKinesthetic",
             question: "Do you enjoy physical activities like sports or dancing?",
@@ -161,24 +110,7 @@
                 { text: "Not good", value: 1 }
             ]
         },
-        {
-            intelligence: "BodilyKinesthetic",
-            question: "Do you often use gestures and body language when communicating?",
-            options: [
-                { text: "Yes, frequently", value: 3 },
-                { text: "Sometimes", value: 2 },
-                { text: "Rarely", value: 1 }
-            ]
-        },
-        {
-            intelligence: "BodilyKinesthetic",
-            question: "How do you feel about learning through hands-on activities?",
-            options: [
-                { text: "I love it", value: 3 },
-                { text: "It's okay", value: 2 },
-                { text: "I don't like it", value: 1 }
-            ]
-        },
+
         {
             intelligence: "Musical",
             question: "Do you enjoy listening to music in your free time?",
@@ -206,25 +138,7 @@
                 { text: "No", value: 1 }
             ]
         },
-        {
-            intelligence: "Musical",
-            question: "Can you easily remember melodies and rhythms?",
-            options: [
-                { text: "Yes, very easily", value: 3 },
-                { text: "Sometimes", value: 2 },
-                { text: "No, it's difficult for me", value: 1 }
-            ]
-        },
-        
-            {
-                intelligence: "Musical",
-                question: "How often do you find yourself humming or tapping to a beat?",
-                options: [
-                    { text: "Often", value: 3 },
-                    { text: "Sometimes", value: 2 },
-                    { text: "Rarely", value: 1 }
-                ]
-            },
+
             {
                 intelligence: "Interpersonal",
                 question: "Do you enjoy working in groups or teams?",
@@ -252,24 +166,7 @@
                     { text: "Rarely", value: 1 }
                 ]
             },
-            {
-                intelligence: "Interpersonal",
-                question: "How well do you handle conflicts and disagreements?",
-                options: [
-                    { text: "Very well", value: 3 },
-                    { text: "Fairly well", value: 2 },
-                    { text: "Not well", value: 1 }
-                ]
-            },
-            {
-                intelligence: "Interpersonal",
-                question: "Do you enjoy social events and meeting new people?",
-                options: [
-                    { text: "Yes, very much", value: 3 },
-                    { text: "Sometimes", value: 2 },
-                    { text: "No, not really", value: 1 }
-                ]
-            },
+
             {
                 intelligence: "Intrapersonal",
                 question: "Do you often reflect on your thoughts and feelings?",
@@ -288,24 +185,7 @@
                     { text: "Not well", value: 1 }
                 ]
             },
-            {
-                intelligence: "Intrapersonal",
-                question: "Are you good at setting personal goals and achieving them?",
-                options: [
-                    { text: "Yes, very good", value: 3 },
-                    { text: "Fairly good", value: 2 },
-                    { text: "Not good", value: 1 }
-                ]
-            },
-            {
-                intelligence: "Intrapersonal",
-                question: "Do you enjoy spending time alone to think or meditate?",
-                options: [
-                    { text: "Yes, very much", value: 3 },
-                    { text: "Sometimes", value: 2 },
-                    { text: "No, not really", value: 1 }
-                ]
-            },
+
             {
                 intelligence: "Intrapersonal",
                 question: "How comfortable are you with expressing your inner thoughts and feelings?",
@@ -342,25 +222,10 @@
                     { text: "Not strong", value: 1 }
                 ]
             },
-            {
-                intelligence: "Naturalistic",
-                question: "How often do you participate in activities like hiking, gardening, or birdwatching?",
-                options: [
-                    { text: "Often", value: 3 },
-                    { text: "Sometimes", value: 2 },
-                    { text: "Rarely", value: 1 }
-                ]
-            },
-            {
-                intelligence: "Naturalistic",
-                question: "Do you find it easy to understand and categorize different aspects of nature?",
-                options: [
-                    { text: "Yes, very easy", value: 3 },
-                    { text: "Sometimes", value: 2 },
-                    { text: "No, it's difficult for me", value: 1 }
-                ]
-            }
+
         ];
+
+// Array.sort(() => Math.random() - 0.5);
 
 
         const progressBar = document.querySelector('.progress-bar');

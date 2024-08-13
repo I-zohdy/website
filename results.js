@@ -10,7 +10,7 @@ const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
 console.log(intelligenceScores);
 
 
-document.getElementById('header').textContent = localStorage.getItem('userName') + "'s Test Result";
+document.getElementById('header').textContent = localStorage.getItem('userName') + "'s MI Test";
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                  'rgba(54, 162, 235)',
                  'rgba(255, 206, 86)',
                  'rgba(75, 192, 192)',
-                 'rgba(153, 102, 255)',
+                 'rgba(208, 255, 0)',
                  'rgba(255, 159, 64)',
                  'rgba(100, 149, 237)',
                  'rgba(60, 179, 113)'
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                  'rgba(54, 162, 235, 1)',
                  'rgba(255, 206, 86, 1)',
                  'rgba(75, 192, 192, 1)',
-                 'rgba(153, 102, 255, 1)',
+                 'rgba(208, 255, 0, 1)',
                  'rgba(255, 159, 64, 1)',
                  'rgba(100, 149, 237, 1)',
                  'rgba(60, 179, 113, 1)'
@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         y: {
                             beginAtZero: true
                         }
-                    }
+                    },
+
                 }
             });
         });
