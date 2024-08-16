@@ -225,16 +225,15 @@
 
         ];
 
-// Array.sort(() => Math.random() - 0.5);
-
-
-        const progressBar = document.querySelector('.progress-bar');
-        const questionElement = document.querySelector('.question');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
         const options = document.querySelectorAll('.option');
-        const resultsContainer = document.getElementById('results');
+        const questionElement = document.querySelector('.question');
+        const questionNumberElement = document.querySelector('.question-number');
+        const progressBar = document.querySelector('.progress-bar');
         
         let currentQuestion = 0;
-        let totalQuestions = questions.length;
+        const totalQuestions = questions.length;
         let userAnswers = {
             Linguistic: [],
             LogicalMathematical: [],
@@ -248,16 +247,28 @@
         
         function loadQuestion() {
             const question = questions[currentQuestion];
-        
+            
             questionElement.textContent = question.question;
         
             options.forEach((option, index) => {
-                option.textContent = String.fromCharCode(97 + index) + ') ' + question.options[index].text;
+                option.textContent = question.options[index].text;
                 option.value = index;
+                option.classList.remove('selected'); // Remove previous selection styles
+        
+                // Reapply selection styles if the option was previously selected
+                if (userAnswers[currentQuestion] !== undefined && userAnswers[currentQuestion] === index) {
+                    option.classList.add('selected');
+                }
+        
                 option.addEventListener('click', handleOptionClick);
             });
         
             progressBar.style.width = ((currentQuestion + 1) / totalQuestions) * 100 + '%';
+            questionNumberElement.textContent = `Question ${currentQuestion + 1}`;
+        
+            // Update arrow button states
+            leftArrow.disabled = currentQuestion === 0;
+            rightArrow.disabled = !userAnswers[currentQuestion] && currentQuestion !== totalQuestions - 1;
         }
         
         function handleOptionClick(event) {
@@ -265,120 +276,66 @@
             const currentQuestionObj = questions[currentQuestion];
             const intelligenceType = currentQuestionObj.intelligence;
         
+            // Store the selected option index for the current intelligence type
+            userAnswers[intelligenceType] = userAnswers[intelligenceType] || [];
             userAnswers[intelligenceType].push(selectedOptionIndex);
         
+            // Move to the next question
             currentQuestion++;
             if (currentQuestion < totalQuestions) {
                 loadQuestion();
             } else {
-                // Handle end of quiz, e.g., display results
+                // Calculate scores after the last question is answered
                 calculateScores();
             }
         }
-
         
         function calculateScores() {
+            console.log('Calculating scores...');
             const intelligenceScores = {};
-          
+        
             for (const intelligenceType in userAnswers) {
-              const answers = userAnswers[intelligenceType];
-              const score = answers.reduce((total, index) => total + questions[index].options[index].value, 0);
-              intelligenceScores[intelligenceType] = score;
+                const answers = userAnswers[intelligenceType];
+                
+                // Ensure answers is an array
+                if (Array.isArray(answers)) {
+                    const score = answers.reduce((total, questionIndex) => {
+                        // Ensure the index is valid
+                        const questionObj = questions[questionIndex];
+                        if (questionObj) {
+                            const optionIndex = answers[questionIndex];
+                            if (questionObj.options[optionIndex]) {
+                                return total + questionObj.options[optionIndex].value;
+                            }
+                        }
+                        return total;
+                    }, 0);
+                    intelligenceScores[intelligenceType] = score;
+                } else {
+                    console.warn(`Expected an array for ${intelligenceType}, but got ${typeof answers}`);
+                    intelligenceScores[intelligenceType] = 0; // Fallback to 0 if not an array
+                }
             }
-          
-            // Store scores in local storage (or other suitable method)
+        
+            // Store scores in local storage
             localStorage.setItem('intelligenceScores', JSON.stringify(intelligenceScores));
           
             // Navigate to results page
-            window.location.href = 'results.html'; // Replace with your results page URL
-          }
-
-        // function calculateScores() {
-        //     const intelligenceScores = {};
+            window.location.href = 'results.html';
+        }
         
-        //     for (const intelligenceType in userAnswers) {
-        //         const answers = userAnswers[intelligenceType];
-        //         const score = answers.reduce((total, index) => total + questions[index].options[index].value, 0);
-        //         intelligenceScores[intelligenceType] = score;
-        //     }
+        leftArrow.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        });
         
-        //     // Display results
-        //     let resultsHtml = '<h2>Your Results:</h2>';
-        //     for (const intelligenceType in intelligenceScores) {
-        //         resultsHtml += `<p>${intelligenceType}: ${intelligenceScores[intelligenceType]}</p>`;
-        //     }
-        //     resultsContainer.innerHTML = resultsHtml;
-        //     resultsContainer.style.display = 'block';
-        // }
+        rightArrow.addEventListener('click', () => {
+            if (currentQuestion < totalQuestions - 1) {
+                currentQuestion++;
+                loadQuestion();
+            }
+        });
         
         loadQuestion();
-
-
-
-
-
-
-
-
-
-
-// const progressBar = document.querySelector('.progress-bar');
-// const questionElement = document.querySelector('.question');
-// const options = document.querySelectorAll('.option');
-
-// let currentQuestion = 0;
-// let totalQuestions = questions.length;
-// let userAnswers = {
-//     Linguistic: [],
-//     LogicalMathematical: [],
-//     Spatial: [],
-//     BodilyKinesthetic: [],
-//     Musical: [],
-//     Interpersonal: [],
-//     Intrapersonal: [],
-//     Naturalistic: [],
-
-//   };
-  
-
-// function loadQuestion() {
-//   const question = questions[currentQuestion];
-
-//   // Update question text
-//   questionElement.textContent = question.question;
-
-//   options.forEach((option, index) => {
-//     option.textContent = String.fromCharCode(97 + index) + ') ' + question.options[index].text;
-//     option.value = index; // Assign index as value for easier tracking
-//     option.addEventListener('click', handleOptionClick);
-//   });
-
-//   progressBar.style.width = ((currentQuestion + 1) / totalQuestions) * 100 + '%';
-// }
-
-
-
-// function handleOptionClick(event) {
-//     const selectedOptionIndex = event.target.value;
-//     const currentQuestionObj = questions[currentQuestion];
-//     const intelligenceType = currentQuestionObj.intelligence;
-  
-//     userAnswers[intelligenceType].push(selectedOptionIndex);
-  
-//     // Logic to handle next question or display feedback (optional)
-//     selectedOptionIndex++;
-//     if (selectedOptionIndex < totalQuestions) {
-//       loadQuestion();
-//     } else {
-//       // Handle end of quiz, e.g., display results
-//       console.log(userAnswers); // For testing, replace with actual result display
-//     }
-//   }
-
-
-
-
-
-// loadQuestion();
- 
-        

@@ -1,76 +1,68 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const resultsChart = document.getElementById('resultsChart').getContext('2d');
+    let currentChartType = 'radar';
 
-const data = JSON.parse(localStorage.getItem('intelligenceScores'));
-if(data == null) { 
-    window.location.href = 'index.html';
-}
+    const chartData = JSON.parse(localStorage.getItem('intelligenceScores')) || {};
+    const labels = Object.keys(chartData);
+    const data = Object.values(chartData);
 
+    function renderChart(type) {
+        if (window.chart) {
+            window.chart.destroy();
+        }
 
-const intelligenceScores =  Object.entries(data).sort((a, b) => b[1] - a[1]);
-
-console.log(intelligenceScores);
-
-
-document.getElementById('header').textContent = localStorage.getItem('userName') + "'s MI Test";
-
-
-document.addEventListener('DOMContentLoaded', (event) => {
-
-
-             // Extract labels and values from the data
-             const labels = intelligenceScores.map(item => item[0]);
-             const values = intelligenceScores.map(item => item[1]);
- 
-             // Colors for each bar
-             const colors = [
-                 'rgba(255, 99, 132)',
-                 'rgba(54, 162, 235)',
-                 'rgba(255, 206, 86)',
-                 'rgba(75, 192, 192)',
-                 'rgba(208, 255, 0)',
-                 'rgba(255, 159, 64)',
-                 'rgba(100, 149, 237)',
-                 'rgba(60, 179, 113)'
-             ];
- 
-             const borderColors = [
-                 'rgba(255, 99, 132, 1)',
-                 'rgba(54, 162, 235, 1)',
-                 'rgba(255, 206, 86, 1)',
-                 'rgba(75, 192, 192, 1)',
-                 'rgba(208, 255, 0, 1)',
-                 'rgba(255, 159, 64, 1)',
-                 'rgba(100, 149, 237, 1)',
-                 'rgba(60, 179, 113, 1)'
-             ];
- 
-            // Create the chart
-            const ctx = document.getElementById('resultsChart').getContext('2d');
-            const resultsChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Test Results',
-                        data: values,
-                        backgroundColor: colors,
-                        borderColor: borderColors,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+        window.chart = new Chart(resultsChart, {
+            type: type,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Intelligence Scores',
+                    data: data,
+                    backgroundColor: 'rgba(92, 53, 129, 0.2)',
+                    borderColor: 'rgba(92, 53, 129, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: false
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
                     },
-
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
                 }
-            });
+            }
         });
+    }
 
-        function resetPage() {
-            localStorage.removeItem('intelligenceScores');
-            localStorage.removeItem('userName');
-            window.location.href = 'index.html'; // Adjust this URL to your main page
-        };
+    document.getElementById('radarChart').addEventListener('click', () => {
+        currentChartType = 'radar';
+        renderChart('radar');
+    });
+
+    document.getElementById('barChart').addEventListener('click', () => {
+        currentChartType = 'bar';
+        renderChart('bar');
+    });
+
+    document.getElementById('mainPageButton').addEventListener('click', () => {
+        window.location.href = 'index.html'; // Replace with your main page URL
+    });
+
+    // Simulate sending data to cloud/database
+    setTimeout(() => {
+        document.getElementById('confirmationAnimation').style.display = 'block';
+    }, 1000);
+
+    // Initial chart render
+    renderChart(currentChartType);
+});

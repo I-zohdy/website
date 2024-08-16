@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Results Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="results.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-radar"></script>
 </head>
 <body>
-    <div id="container">
-        <div id="header"></div>
-        <div id="chart-container">
+    <div class="results-container">
+        <h1 class="results-title">Your Results</h1>
+        <div class="chart-container">
             <canvas id="resultsChart"></canvas>
         </div>
-        <div id="button-container">
-
-            <button id="reset-button" onclick="resetPage()">Go to Main Page</button>
+        <div class="chart-options">
+            <button id="radarChart" class="chart-button">Radar Chart</button>
+            <button id="barChart" class="chart-button">Bar Chart</button>
         </div>
+        <button id="mainPageButton" class="main-page-button">Go to Main Page</button>
+        <div id="confirmationAnimation" class="confirmation-animation">Data Sent!</div>
     </div>
     <script src="results.js"></script>
 </body>
