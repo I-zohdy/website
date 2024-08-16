@@ -64,6 +64,8 @@ body {
     border: 2px solid #00a38d;
     border-radius: 5px;
     overflow: hidden;
+    width: 100%; /* Ensure full width to match the card */
+    box-sizing: border-box; /* Include border in width calculation */
 }
 
 .input-container input {
@@ -72,6 +74,7 @@ body {
     outline: none;
     flex-grow: 1;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .input-container button {
