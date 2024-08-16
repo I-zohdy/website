@@ -1,6 +1,3 @@
-if (localStorage.getItem('intelligenceScores') != null) {
-    window.location.href = 'results.html';
-}
 
 const startButton = document.getElementById('start-button');
 

@@ -225,117 +225,205 @@
 
         ];
 
-        const leftArrow = document.querySelector('.left-arrow');
-        const rightArrow = document.querySelector('.right-arrow');
-        const options = document.querySelectorAll('.option');
-        const questionElement = document.querySelector('.question');
-        const questionNumberElement = document.querySelector('.question-number');
-        const progressBar = document.querySelector('.progress-bar');
+     
+// const leftArrow = document.querySelector('.left-arrow');
+// const rightArrow = document.querySelector('.right-arrow');
+// const options = document.querySelectorAll('.option');
+// const questionElement = document.querySelector('.question');
+// const questionNumberElement = document.querySelector('.question-number');
+// const progressBar = document.querySelector('.progress-bar');
+
+// let currentQuestion = 0;
+// const totalQuestions = questions.length;
+// let userAnswers = {
+//     Linguistic: [],
+//     LogicalMathematical: [],
+//     Spatial: [],
+//     BodilyKinesthetic: [],
+//     Musical: [],
+//     Interpersonal: [],
+//     Intrapersonal: [],
+//     Naturalistic: [],
+// };
         
-        let currentQuestion = 0;
-        const totalQuestions = questions.length;
-        let userAnswers = {
-            Linguistic: [],
-            LogicalMathematical: [],
-            Spatial: [],
-            BodilyKinesthetic: [],
-            Musical: [],
-            Interpersonal: [],
-            Intrapersonal: [],
-            Naturalistic: [],
-        };
-        
-        function loadQuestion() {
-            const question = questions[currentQuestion];
-            
-            questionElement.textContent = question.question;
-        
-            options.forEach((option, index) => {
-                option.textContent = question.options[index].text;
-                option.value = index;
-                option.classList.remove('selected'); // Remove previous selection styles
-        
-                // Reapply selection styles if the option was previously selected
-                if (userAnswers[currentQuestion] !== undefined && userAnswers[currentQuestion] === index) {
-                    option.classList.add('selected');
-                }
-        
-                option.addEventListener('click', handleOptionClick);
-            });
-        
-            progressBar.style.width = ((currentQuestion + 1) / totalQuestions) * 100 + '%';
-            questionNumberElement.textContent = `Question ${currentQuestion + 1}`;
-        
-            // Update arrow button states
-            leftArrow.disabled = currentQuestion === 0;
-            rightArrow.disabled = !userAnswers[currentQuestion] && currentQuestion !== totalQuestions - 1;
+// function loadQuestion() {
+//     const question = questions[currentQuestion];
+    
+//     questionElement.textContent = question.question;
+
+//     options.forEach((option, index) => {
+//         option.textContent = question.options[index].text;
+//         option.value = index;
+//         option.classList.remove('selected'); // Remove previous selection styles
+
+//         // Reapply selection styles if the option was previously selected
+//         if (userAnswers[currentQuestion] !== undefined && userAnswers[currentQuestion] === index) {
+//             option.classList.add('selected');
+//         }
+
+//         option.addEventListener('click', handleOptionClick);
+//     });
+
+//     progressBar.style.width = ((currentQuestion + 1) / totalQuestions) * 100 + '%';
+//     questionNumberElement.textContent = `Question ${currentQuestion + 1}`;
+
+//     // Update arrow button states
+//     leftArrow.disabled = currentQuestion === 0;
+//     rightArrow.disabled = true; // Initially disabled
+// }
+
+// function handleOptionClick(event) {
+//     const selectedOptionIndex = event.target.value;
+//     const currentQuestionObj = questions[currentQuestion];
+//     const intelligenceType = currentQuestionObj.intelligence;
+
+//     // Store the selected option index for the current intelligence type
+//     userAnswers[intelligenceType] = userAnswers[intelligenceType] || [];
+//     userAnswers[intelligenceType][currentQuestion] = selectedOptionIndex;
+
+//     event.target.classList.add('selected');
+
+//     // Move to the next question or calculate scores if it's the last question
+//     currentQuestion++;
+//     if (currentQuestion < totalQuestions) {
+//         loadQuestion();
+//     } else {
+//         calculateScores();
+//     }
+// }
+
+// function calculateScores() {
+//     console.log('Calculating scores...');
+//     const intelligenceScores = {};
+//     let completedIntelligences = 0;
+  
+//     for (const intelligenceType in userAnswers) {
+//       const answers = userAnswers[intelligenceType];
+  
+//       if (Array.isArray(answers)) {
+//         const score = answers.reduce((total, questionIndex) => {
+//           // ... (rest of the score calculation logic)
+//           return total;
+//         }, 0);
+//         intelligenceScores[intelligenceType] = score;
+//         completedIntelligences++;
+//       } else {
+//         intelligenceScores[intelligenceType] = 0;
+//       }
+//     }
+  
+//     // Check if all intelligences are completed 
+//     if (completedIntelligences === Object.keys(userAnswers).length) {
+//       // Store the scores in localStorage
+//       localStorage.setItem('intelligenceScores', JSON.stringify(intelligenceScores));
+//       // Redirect to results page
+//       window.location.href = 'results.html';
+//     }
+//   }
+
+// leftArrow.addEventListener('click', () => {
+//     if (currentQuestion > 0) {
+//         currentQuestion--;
+//         loadQuestion();
+//     }
+// });
+
+// // Disable the right arrow since we'll be auto-advancing
+// rightArrow.style.display = 'none';
+
+// loadQuestion();
+
+
+
+
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const options = document.querySelectorAll('.option');
+const questionElement = document.querySelector('.question');
+const questionNumberElement = document.querySelector('.question-number');
+const progressBar = document.querySelector('.progress-bar');
+
+let currentQuestion = 0;
+const totalQuestions = questions.length;
+const userAnswers = {};
+
+function loadQuestion() {
+    const question = questions[currentQuestion];
+
+    questionElement.textContent = question.question;
+
+    options.forEach((option, index) => {
+        option.textContent = question.options[index].text;
+        option.value = question.options[index].value;
+        option.classList.remove('selected'); // Remove previous selection styles
+
+        // Reapply selection styles if the option was previously selected
+        if (userAnswers[currentQuestion] !== undefined && userAnswers[currentQuestion] === option.value) {
+            option.classList.add('selected');
         }
-        
-        function handleOptionClick(event) {
-            const selectedOptionIndex = event.target.value;
-            const currentQuestionObj = questions[currentQuestion];
-            const intelligenceType = currentQuestionObj.intelligence;
-        
-            // Store the selected option index for the current intelligence type
-            userAnswers[intelligenceType] = userAnswers[intelligenceType] || [];
-            userAnswers[intelligenceType].push(selectedOptionIndex);
-        
-            // Move to the next question
-            currentQuestion++;
-            if (currentQuestion < totalQuestions) {
-                loadQuestion();
-            } else {
-                // Calculate scores after the last question is answered
-                calculateScores();
-            }
-        }
-        
-        function calculateScores() {
-            console.log('Calculating scores...');
-            const intelligenceScores = {};
-        
-            for (const intelligenceType in userAnswers) {
-                const answers = userAnswers[intelligenceType];
-                
-                // Ensure answers is an array
-                if (Array.isArray(answers)) {
-                    const score = answers.reduce((total, questionIndex) => {
-                        // Ensure the index is valid
-                        const questionObj = questions[questionIndex];
-                        if (questionObj) {
-                            const optionIndex = answers[questionIndex];
-                            if (questionObj.options[optionIndex]) {
-                                return total + questionObj.options[optionIndex].value;
-                            }
-                        }
-                        return total;
-                    }, 0);
-                    intelligenceScores[intelligenceType] = score;
-                } else {
-                    console.warn(`Expected an array for ${intelligenceType}, but got ${typeof answers}`);
-                    intelligenceScores[intelligenceType] = 0; // Fallback to 0 if not an array
-                }
-            }
-        
-            // Store scores in local storage
-            localStorage.setItem('intelligenceScores', JSON.stringify(intelligenceScores));
-          
-            // Navigate to results page
-            window.location.href = 'results.html';
-        }
-        
-        leftArrow.addEventListener('click', () => {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                loadQuestion();
-            }
-        });
-        
-        rightArrow.addEventListener('click', () => {
-            if (currentQuestion < totalQuestions - 1) {
-                currentQuestion++;
-                loadQuestion();
-            }
-        });
-        
+
+        option.addEventListener('click', handleOptionClick);
+    });
+
+    progressBar.style.width = ((currentQuestion + 1) / totalQuestions) * 100 + '%';
+    questionNumberElement.textContent = `Question ${currentQuestion + 1}`;
+
+    // Update arrow button states
+    leftArrow.disabled = currentQuestion === 0;
+    rightArrow.disabled = true; // Initially disabled
+}
+
+function handleOptionClick(event) {
+    const selectedOptionValue = parseInt(event.target.value, 10);
+
+    // Store the selected option value for the current question
+    userAnswers[currentQuestion] = selectedOptionValue;
+
+    event.target.classList.add('selected');
+
+    // Move to the next question or calculate scores if it's the last question
+    currentQuestion++;
+    if (currentQuestion < totalQuestions) {
         loadQuestion();
+    } else {
+        calculateScores();
+    }
+}
+
+function calculateScores() {
+    console.log('Calculating scores...');
+    const intelligenceScores = {
+        Linguistic: 0,
+        LogicalMathematical: 0,
+        Spatial: 0,
+        BodilyKinesthetic: 0,
+        Musical: 0,
+        Interpersonal: 0,
+        Intrapersonal: 0,
+        Naturalistic: 0
+    };
+
+    questions.forEach((question, index) => {
+        const intelligenceType = question.intelligence;
+        const score = userAnswers[index] || 0;
+        intelligenceScores[intelligenceType] = (intelligenceScores[intelligenceType] || 0) + score;
+    });
+
+    // Store the scores in localStorage
+    localStorage.setItem('intelligenceScores', JSON.stringify(intelligenceScores));
+
+    // Redirect to results page
+    window.location.href = 'results.html';
+}
+
+leftArrow.addEventListener('click', () => {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
+});
+
+// Disable the right arrow since we'll be auto-advancing
+rightArrow.style.display = 'none';
+
+loadQuestion();

@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="results.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-radar"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="results-container">
-        <h1 class="results-title">Your Results</h1>
+        <h1 class="results-title">Your Intelligence Scores</h1>
         <div class="chart-container">
             <canvas id="resultsChart"></canvas>
         </div>
-        <div class="chart-options">
+        <div class="chart-buttons">
             <button id="radarChart" class="chart-button">Radar Chart</button>
             <button id="barChart" class="chart-button">Bar Chart</button>
         </div>
         <button id="mainPageButton" class="main-page-button">Go to Main Page</button>
-        <div id="confirmationAnimation" class="confirmation-animation">Data Sent!</div>
+        <div id="confirmationAnimation" class="confirmation-animation">Data has been sent!</div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="results.js"></script>
     </div>
-    <script src="results.js"></script>
 </body>
 </html>

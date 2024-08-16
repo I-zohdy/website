@@ -2,9 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsChart = document.getElementById('resultsChart').getContext('2d');
     let currentChartType = 'radar';
 
+    // Fetch data from localStorage
     const chartData = JSON.parse(localStorage.getItem('intelligenceScores')) || {};
+    console.log('Chart Data:', chartData); // Debugging: Check the data fetched
+
+    // Extract labels and data from chartData
     const labels = Object.keys(chartData);
     const data = Object.values(chartData);
+    console.log('Labels:', labels); // Debugging: Check labels
+    console.log('Data:', data); // Debugging: Check data
 
     function renderChart(type) {
         if (window.chart) {
