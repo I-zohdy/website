@@ -63,39 +63,71 @@ export default function MIApp({ defaultLevel = null }) {
 
   // NAME SCREEN
   if (step === "name") {
-    return (
-      <div className="app-root">
-        <div className="card">
-          <header className="header">
-            <h1>Découvre tes intelligences</h1>
-          </header>
+  return (
+    <div className="app-root">
+      <div className="card">
+        <header className="header">
+          <h1>Découvre tes intelligences</h1>
+        </header>
 
-          <div className="question-box">
-            <form className="name-form" onSubmit={handleStart}>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-                <label htmlFor="first-name">Prénom</label>
-                <input id="first-name" type="text" value={firstName} onChange={e => setFirstName(e.target.value)} className="input-name" placeholder="Prénom" />
-
-                <label htmlFor="last-name">Nom</label>
-                <input id="last-name" type="text" value={lastName} onChange={e => setLastName(e.target.value)} className="input-name" placeholder="Nom de famille" />
-
-                <label htmlFor="level">Classe</label>
-                <select id="level" value={level} onChange={e => setLevel(e.target.value)}>
-                  <option value="level1">Classe 9</option>
-                  <option value="level2">Classe 10</option>
-                  <option value="level3">Classe 11</option>
-                  <option value="level4">Classe 12</option>
-                </select>
-
-                <button type="submit" className="btn btn-primary" disabled={!firstName.trim() || !lastName.trim()}>Commencer</button>
+        <div className="question-box">
+          <form className="name-form" onSubmit={handleStart}>
+            {/* grouped fields for better responsive layout */}
+            <div className="name-grid">
+              <div className="name-field">
+                <label htmlFor="first-name">First name</label>
+                <input
+                  id="first-name"
+                  type="text"
+                  value={firstName}
+                  onChange={e => setFirstName(e.target.value)}
+                  className="input-name"
+                  placeholder="First name"
+                  autoFocus
+                />
               </div>
-            </form>
-            <p className="helper">Remplissez prénom et nom de famille, puis choisissez la classe.</p>
-          </div>
+
+              <div className="name-field">
+                <label htmlFor="last-name">Last name</label>
+                <input
+                  id="last-name"
+                  type="text"
+                  value={lastName}
+                  onChange={e => setLastName(e.target.value)}
+                  className="input-name"
+                  placeholder="Last name"
+                />
+              </div>
+
+              <div className="name-field">
+                <label htmlFor="level">Grade</label>
+                <select id="level" value={level} onChange={e => setLevel(e.target.value)}>
+                  <option value="level1">Grade 9</option>
+                  <option value="level2">Grade 10</option>
+                  <option value="level3">Grade 11</option>
+                  <option value="level4">Grade 12</option>
+                </select>
+              </div>
+
+              <div className="name-field name-field--button">
+                <label style={{ opacity: 0, height: 0, display: "block" }}>.</label>
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-full"
+                  disabled={!firstName.trim() || !lastName.trim()}
+                >
+                  Start
+                </button>
+              </div>
+            </div>
+
+            <p className="helper">Enter first and last name, then choose your grade.</p>
+          </form>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   // RESULTS SCREEN
   if (step === "results" || finished) {
