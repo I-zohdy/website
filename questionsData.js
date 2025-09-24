@@ -1,138 +1,174 @@
+// questionsData.js
+
 export const QUESTIONS_DATA = {
+  // Grade 9
   level0: [
-    { intelligence: "Linguistique", question: "J'aime écrire des histoires ou des rédactions.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Linguistique", question: "Je comprends facilement des textes scolaires sans trop d'effort.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Linguistique", question: "J'aime expliquer des idées à l'oral devant la classe.", options: [{ text: "Oui", value: 2 }, { text: "Un peu", value: 1 }, { text: "Non", value: 0 }] },
+    // Linguistic
+    { intelligence: "Linguistic", question: "Do you enjoy reading books, stories, or articles in your free time?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you like writing short stories, notes, or diary entries?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you find it easy to explain things to friends using words?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "LogicoMath", question: "J'aime résoudre des problèmes de maths et trouver des solutions.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "LogicoMath", question: "Je comprends facilement des raisonnements et des preuves simples.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "LogicoMath", question: "J'aime classer et organiser des informations (tableaux, listes...).", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Logical-Mathematical
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy solving math problems or puzzles?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you notice patterns in numbers, shapes, or situations?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you like organizing information into lists, tables, or charts?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Spatiale", question: "J'aime dessiner ou créer des schémas pour expliquer des idées.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Spatiale", question: "Je suis à l'aise pour lire des cartes ou repères dans l'espace.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Spatiale", question: "Je visualise facilement des objets en 2D dans ma tête.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Spatial
+    { intelligence: "Spatial", question: "Do you enjoy drawing, doodling, or creating pictures?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you find it easy to imagine objects or places in your mind?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you like building or assembling objects (real or digital)?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Kinesthesique", question: "J'aime apprendre en faisant des expériences pratiques.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je participe volontiers aux activités sportives à l'école.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "J'aime manipuler des objets pour comprendre comment ils fonctionnent.", options: [{ text: "Oui", value: 2 }, { text: "Un peu", value: 1 }, { text: "Non", value: 0 }] },
+    // Kinesthetic
+    { intelligence: "Kinesthetic", question: "Do you enjoy sports, dancing, or other physical activities?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you learn better when you can move or use your hands?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you find it easy to copy movements or gestures?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Musicale", question: "J'écoute de la musique pour me concentrer ou me détendre.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Musicale", question: "Je repère facilement des rythmes et des mélodies.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Musicale", question: "Je joue d'un instrument ou chante régulièrement.", options: [{ text: "Oui", value: 2 }, { text: "Un peu", value: 1 }, { text: "Non", value: 0 }] },
+    // Musical
+    { intelligence: "Musical", question: "Do you enjoy listening to music every day?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Musical", question: "Do you remember songs, rhythms, or melodies easily?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Musical", question: "Do you like singing, humming, or playing an instrument?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Interpersonnelle", question: "J'aime travailler en groupe et aider les autres élèves.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "Les autres viennent souvent me demander conseil.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "Je comprends bien les émotions des autres.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Interpersonal
+    { intelligence: "Interpersonal", question: "Do you enjoy working in groups with classmates?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you notice when others are happy, sad, or upset?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you like helping others solve problems?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Intrapersonnelle", question: "Je réfléchis souvent à mes objectifs et à mes sentiments.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je connais bien mes forces et mes faiblesses.", options: [{ text: "Oui", value: 2 }, { text: "Un peu", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je prends des décisions en tenant compte de mes valeurs personnelles.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Intrapersonal
+    { intelligence: "Intrapersonal", question: "Do you often think about your feelings or thoughts?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you know what you are good at and where you need help?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you make choices based on what feels right to you?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
 
-    { intelligence: "Naturaliste", question: "J'aime observer la nature et les animaux.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je suis intéressé par des sujets comme l'environnement et l'écologie.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je reconnais facilement certaines plantes ou animaux.", options: [{ text: "Oui", value: 2 }, { text: "Un peu", value: 1 }, { text: "Non", value: 0 }] }
+    // Naturalistic
+    { intelligence: "Naturalistic", question: "Do you enjoy being outdoors in nature?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you notice details about animals, plants, or the environment?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you like learning about science, nature, or the environment?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] }
   ],
 
+  // Grade 10
   level1: [
-    { intelligence: "Linguistique", question: "Je rédige des textes structurés (rédaction, résumé) pour les cours.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Linguistique", question: "J'explique clairement mes idées à l'écrit.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Linguistique", question: "Je lis des articles ou documentations pour apprendre de nouvelles notions.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Linguistic
+    { intelligence: "Linguistic", question: "Do you enjoy reading novels, essays, or news articles for fun?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you like writing your thoughts in journals, blogs, or creative pieces?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you find it easy to summarize or explain ideas in class?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "LogicoMath", question: "Je résous des problèmes qui demandent plusieurs étapes de raisonnement.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "LogicoMath", question: "J'aime construire des modèles (tableaux, graphiques) pour comprendre des données.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "LogicoMath", question: "Je comprends les concepts abstraits en mathématiques.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Logical-Mathematical
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy working through challenging math or logic problems?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you see logical connections between different school subjects?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy experimenting with strategies to solve problems?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Spatiale", question: "Je conçois des maquettes, schémas ou présentations visuelles pour mes projets.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Spatiale", question: "Je visualise des transformations géométriques facilement.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Spatiale", question: "J'utilise des outils numériques pour créer des repères visuels (slides, dessins).", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Spatial
+    { intelligence: "Spatial", question: "Do you like imagining designs, structures, or models in your head?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you enjoy looking at maps, diagrams, or charts?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you like sketching or creating visual projects?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Kinesthesique", question: "Je comprends mieux quand on me montre comment faire plutôt qu'en lisant.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je participe activement aux ateliers pratiques au collège/lycée.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "J'aime construire des prototypes ou faire des expériences en sciences.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Kinesthetic
+    { intelligence: "Kinesthetic", question: "Do you prefer hands-on activities when learning new topics?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you find it easier to focus when moving around?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you enjoy building, crafting, or creating physical objects?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Musicale", question: "J'analyse la structure d'une chanson ou d'une pièce musicale.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Musicale", question: "Je compose ou arrange parfois une mélodie simple.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Musicale", question: "J'utilise la musique pour mémoriser des informations.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Musical
+    { intelligence: "Musical", question: "Do you enjoy analyzing the rhythm or lyrics of songs?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Musical", question: "Do you notice background music or beats in movies or games?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Musical", question: "Do you experiment with playing or composing music?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Interpersonnelle", question: "Je mène des projets de groupe et coordonne les tâches.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "Je résous des conflits entre camarades avec calme.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "J'aime présenter le travail du groupe devant la classe.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Interpersonal
+    { intelligence: "Interpersonal", question: "Do you enjoy discussing ideas with classmates?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you often take the lead when working in groups?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you find it easy to motivate or encourage others?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Intrapersonnelle", question: "Je fixe des objectifs scolaires clairs et j'essaie de les atteindre.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je m'auto-évalue pour comprendre comment m'améliorer.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je gère bien mon temps d'étude et mes priorités.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Intrapersonal
+    { intelligence: "Intrapersonal", question: "Do you reflect on your strengths and weaknesses?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you plan ahead to reach personal goals?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you prefer to make independent decisions?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
 
-    { intelligence: "Naturaliste", question: "Je participe à des projets liés à l'environnement ou la biologie.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je comprends l'importance de la biodiversité et des écosystèmes.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Naturaliste", question: "J'aime observer des phénomènes naturels lors de sorties scolaires.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] }
+    // Naturalistic
+    { intelligence: "Naturalistic", question: "Do you enjoy exploring the environment or observing nature?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you like reading about animals, ecosystems, or climate?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you enjoy outdoor activities like hiking or gardening?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] }
   ],
 
   level2: [
-    { intelligence: "Linguistique", question: "Je rédige des dissertations structurées avec arguments et exemples.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Linguistique", question: "J'analyse des textes littéraires et je repère les figures de style.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Linguistique", question: "Je prépare des exposés clairs et structurés pour la classe.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Linguistic
+    { intelligence: "Linguistic", question: "Do you enjoy analyzing complex texts such as literature or speeches?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you find it easy to argue or defend a point of view with evidence?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you enjoy learning new vocabulary to express ideas better?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "LogicoMath", question: "Je comprends et j'applique des démonstrations mathématiques complexes.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "LogicoMath", question: "Je modélise des situations réelles par des fonctions ou équations.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "LogicoMath", question: "Je fais des raisonnements logiques rigoureux et précis.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Logical-Mathematical
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy solving real-world problems using logic or math?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you apply formulas or strategies across different subjects?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy comparing data to make predictions?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Spatiale", question: "Je conçois des présentations visuelles avancées (infographies, prototypes).", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Spatiale", question: "Je utilise des logiciels de dessin ou CAO de base pour mes projets.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Spatiale", question: "J'imagine des solutions techniques pour des problèmes concrets.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Spatial
+    { intelligence: "Spatial", question: "Do you visualize solutions before starting projects or assignments?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you like using diagrams or concept maps to organize thoughts?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you enjoy interpreting images, charts, or models in science or math?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Kinesthesique", question: "Je réussis bien les TP et les ateliers pratiques en sciences/technique.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je sais prototyper une idée (maquette, circuit, projet manuel).", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je préfère apprendre par la pratique plutôt que par la théorie seule.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Kinesthetic
+    { intelligence: "Kinesthetic", question: "Do you learn best through experiments, labs, or role-playing?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you need to move or act out problems to understand them?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you enjoy activities that involve balance, coordination, or precision?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Musicale", question: "J'analyse la structure harmonique et rythmique d'une pièce musicale.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Musicale", question: "Je compose ou arrange des morceaux plus complexes.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Musicale", question: "J'utilise la musique comme outil d'apprentissage et de mémorisation avancé.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Musical
+    { intelligence: "Musical", question: "Do you enjoy identifying instruments or layers in songs?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Musical", question: "Do you learn better when information is set to music or rhythm?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Musical", question: "Do you like experimenting with digital music tools or editing sounds?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Interpersonnelle", question: "Je dirige des projets d'équipe et j'organise le travail collectif.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "J'aide mes pairs à progresser grâce à un tutorat ou soutien scolaire.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "Je suis à l'aise pour négocier et convaincre dans un groupe.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Interpersonal
+    { intelligence: "Interpersonal", question: "Do you enjoy leading discussions and managing group tasks?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you find it easy to resolve conflicts between peers?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you provide support and empathy when others struggle?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Intrapersonnelle", question: "Je définis un projet personnel (orientation, études) et je construis un plan pour y parvenir.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je gère le stress des examens et je sais me motiver seul(e).", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je tire des leçons de mes erreurs pour m'améliorer.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Intrapersonal
+    { intelligence: "Intrapersonal", question: "Do you spend time setting long-term goals for yourself?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you analyze your decisions to learn from them?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you understand how emotions influence your choices?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Naturaliste", question: "Je conçois ou participe à des projets scientifiques liés à l'environnement.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je sais relier des phénomènes naturels à des idées scientifiques apprises à l'école.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je participe volontiers à des initiatives écologiques scolaires (journées vertes...).", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] }
-  ]
-  , level4: [
-    { intelligence: "Linguistique", question: "Je rédige des dissertations argumentées en utilisant des sources variées.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Linguistique", question: "J'analyse les intentions d'un auteur et les structures de texte complexes.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Linguistique", question: "Je maîtrise les règles de rédaction et je relis mes travaux pour les améliorer.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Naturalistic
+    { intelligence: "Naturalistic", question: "Do you connect environmental issues to daily life?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you enjoy studying biology, geography, or ecology?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you take interest in how humans affect the environment?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] }
+  ],
 
-    { intelligence: "LogicoMath", question: "Je résous des problèmes en plusieurs étapes et je vérifie mes résultats.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "LogicoMath", question: "J'utilise des fonctions et des modèles pour représenter des situations réelles.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "LogicoMath", question: "Je fais des démonstrations ou des raisonnements rigoureux.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+  // Grade 12
+  level3: [
+    // Linguistic
+    { intelligence: "Linguistic", question: "Do you critically evaluate texts for bias, purpose, or perspective?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you craft persuasive essays or speeches to influence others?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Linguistic", question: "Do you value precise language to clarify complex ideas?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Spatiale", question: "Je conçois des schémas techniques ou des maquettes précises.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Spatiale", question: "Je interprète des plans ou des modèles 2D avec facilité.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Spatiale", question: "J'utilise des logiciels pour réaliser des présentations ou prototypes.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Logical-Mathematical
+    { intelligence: "Logical-Mathematical", question: "Do you apply logical reasoning to evaluate arguments or debates?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you analyze data sets to support or challenge conclusions?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Logical-Mathematical", question: "Do you enjoy exploring abstract concepts in math or science?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Kinesthesique", question: "Je maîtrise des gestes techniques et je réussis les travaux pratiques.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je sais planifier et réaliser un projet manuel ou scientifique.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Kinesthesique", question: "Je apprends efficacement en manipulant et répérant des procédures.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Spatial
+    { intelligence: "Spatial", question: "Do you design creative solutions using visual models or plans?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you interpret technical drawings, graphs, or architectural plans?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Spatial", question: "Do you think in images or mental maps when solving problems?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Musicale", question: "J'analyse et j'interprète des œuvres musicales complexes.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Musicale", question: "Je compose ou arrange avec une structure harmonique claire.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Musicale", question: "J'utilise la musique pour mémoriser ou illustrer des idées complexes.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Kinesthetic
+    { intelligence: "Kinesthetic", question: "Do you express ideas effectively through drama, dance, or role play?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you enjoy refining motor skills for sports, arts, or crafts?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Kinesthetic", question: "Do you learn by physically simulating real-world scenarios?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Interpersonnelle", question: "Je mène et j'organise des équipes dans des projets de niveau lycée.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "Je communique clairement des rôles et je résous des conflits efficacement.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Interpersonnelle", question: "J'aide mes pairs à progresser par du tutorat structuré.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
+    // Musical
+    { intelligence: "Musical", question: "Do you compose or remix music to express creativity?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Musical", question: "Do you study how music reflects culture or history?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Musical", question: "Do you experiment with rhythm to enhance memory or learning?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Intrapersonnelle", question: "Je définis un projet d'orientation et je construis un plan précis.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je évalue mes progrès et je m'ajuste pour atteindre mes objectifs.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Intrapersonnelle", question: "Je gère le stress des échéances et je priorise mes tâches efficacement.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
+    // Interpersonal
+    { intelligence: "Interpersonal", question: "Do you mentor or guide peers in academic or social contexts?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you navigate complex group dynamics effectively?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Interpersonal", question: "Do you adapt communication styles to connect with different people?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-    { intelligence: "Naturaliste", question: "Je comprends des problématiques environnementales complexes et participe à des projets.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] },
-    { intelligence: "Naturaliste", question: "J'utilise des méthodes scientifiques pour observer et analyser la nature.", options: [{ text: "Oui", value: 2 }, { text: "Parfois", value: 1 }, { text: "Non", value: 0 }] },
-    { intelligence: "Naturaliste", question: "Je propose des actions concrètes pour améliorer un écosystème local.", options: [{ text: "Souvent", value: 2 }, { text: "Parfois", value: 1 }, { text: "Rarement", value: 0 }] }
+    // Intrapersonal
+    { intelligence: "Intrapersonal", question: "Do you evaluate your growth through reflection and feedback?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you create strategies for stress or emotional management?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Intrapersonal", question: "Do you integrate personal values when making important decisions?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
 
-
+    // Naturalistic
+    { intelligence: "Naturalistic", question: "Do you study how technology impacts ecosystems or nature?", options: [{ text: "Yes", value: 2 }, { text: "Sometimes", value: 1 }, { text: "No", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you connect global issues like climate change to daily choices?", options: [{ text: "Often", value: 2 }, { text: "Sometimes", value: 1 }, { text: "Rarely", value: 0 }] },
+    { intelligence: "Naturalistic", question: "Do you advocate for environmental awareness in your community?", options: [{ text: "Yes", value: 2 }, { text: "A little", value: 1 }, { text: "No", value: 0 }] }
   ]
 };

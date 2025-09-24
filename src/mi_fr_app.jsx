@@ -63,71 +63,70 @@ export default function MIApp({ defaultLevel = null }) {
 
   // NAME SCREEN
   if (step === "name") {
-  return (
-    <div className="app-root">
-      <div className="card">
-        <header className="header">
-          <h1>Découvre tes intelligences</h1>
-        </header>
+    return (
+      <div className="app-root">
+        <div className="card">
+          <header className="header">
+            <h1>Discover Your Intelligences</h1>
+          </header>
 
-        <div className="question-box">
-          <form className="name-form" onSubmit={handleStart}>
-            {/* grouped fields for better responsive layout */}
-            <div className="name-grid">
-              <div className="name-field">
-                <label htmlFor="first-name">First name</label>
-                <input
-                  id="first-name"
-                  type="text"
-                  value={firstName}
-                  onChange={e => setFirstName(e.target.value)}
-                  className="input-name"
-                  placeholder="First name"
-                  autoFocus
-                />
+          <div className="question-box">
+            <form className="name-form" onSubmit={handleStart}>
+              <div className="name-grid">
+                <div className="name-field">
+                  <label htmlFor="first-name">First name</label>
+                  <input
+                    id="first-name"
+                    type="text"
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)}
+                    className="input-name"
+                    placeholder="First name"
+                    autoFocus
+                  />
+                </div>
+
+                <div className="name-field">
+                  <label htmlFor="last-name">Last name</label>
+                  <input
+                    id="last-name"
+                    type="text"
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)}
+                    className="input-name"
+                    placeholder="Last name"
+                  />
+                </div>
+
+                <div className="name-field">
+                  <label htmlFor="level">Grade</label>
+                  <select id="level" value={level} onChange={e => setLevel(e.target.value)}>
+                    <option value="level1">Grade 9</option>
+                    <option value="level2">Grade 10</option>
+                    <option value="level3">Grade 11</option>
+                    <option value="level4">Grade 12</option>
+                  </select>
+                </div>
+
+                <div className="name-field name-field--button">
+                  <label style={{ opacity: 0, height: 0, display: "block" }}>.</label>
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-full"
+                    disabled={!firstName.trim() || !lastName.trim()}
+                  >
+                    Start
+                  </button>
+                </div>
               </div>
 
-              <div className="name-field">
-                <label htmlFor="last-name">Last name</label>
-                <input
-                  id="last-name"
-                  type="text"
-                  value={lastName}
-                  onChange={e => setLastName(e.target.value)}
-                  className="input-name"
-                  placeholder="Last name"
-                />
-              </div>
-
-              <div className="name-field">
-                <label htmlFor="level">Grade</label>
-                <select id="level" value={level} onChange={e => setLevel(e.target.value)}>
-                  <option value="level1">Grade 9</option>
-                  <option value="level2">Grade 10</option>
-                  <option value="level3">Grade 11</option>
-                  <option value="level4">Grade 12</option>
-                </select>
-              </div>
-
-              <div className="name-field name-field--button">
-                <label style={{ opacity: 0, height: 0, display: "block" }}>.</label>
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-full"
-                  disabled={!firstName.trim() || !lastName.trim()}
-                >
-                  Start
-                </button>
-              </div>
-            </div>
-
-            <p className="helper">Enter first and last name, then choose your grade.</p>
-          </form>
+              <p className="helper">Enter first and last name, then choose your grade.</p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
   // RESULTS SCREEN
   if (step === "results" || finished) {
@@ -142,12 +141,21 @@ export default function MIApp({ defaultLevel = null }) {
       <div className="card">
         <header className="header">
           <h1>
-            Découvre tes intelligences — <span className="level-sub">{level === "level1" ? "Classe 9" : level === "level2" ? "Classe 10" : level === "level3" ? "Classe 11" : "Classe 12"}</span>
+            Discover Your Intelligences —{" "}
+            <span className="level-sub">
+              {level === "level1"
+                ? "Grade 9"
+                : level === "level2"
+                ? "Grade 10"
+                : level === "level3"
+                ? "Grade 11"
+                : "Grade 12"}
+            </span>
           </h1>
         </header>
 
         <div className="question-box">
-          <p className="meta">Question {index + 1} sur {questions.length}</p>
+          <p className="meta">Question {index + 1} of {questions.length}</p>
           <h2 className="question-text">{q.question}</h2>
 
           <div className="options">
@@ -165,7 +173,9 @@ export default function MIApp({ defaultLevel = null }) {
 
           <div className="nav-buttons">
             {index > 0 && (
-              <button className="btn btn-secondary" onClick={handleBack}>⬅️ Retour</button>
+              <button className="btn btn-secondary" onClick={handleBack}>
+                ⬅️ Back
+              </button>
             )}
           </div>
         </div>
@@ -177,8 +187,8 @@ export default function MIApp({ defaultLevel = null }) {
 function ResultsView({ scores, studentName, onReset, level, questions }) {
   const labels = Object.keys(scores);
   const values = Object.values(scores);
-   useEffect(() => {
-    // decompose studentName into first/last if you store separately:
+
+  useEffect(() => {
     const [firstName, ...rest] = studentName.split(" ");
     const lastName = rest.join(" ") || "";
 
@@ -192,14 +202,13 @@ function ResultsView({ scores, studentName, onReset, level, questions }) {
     saveResult(payload)
       .then(id => console.log("Saved result doc id:", id))
       .catch(err => console.error("Failed to save result:", err));
-  }, []); // run once on mount (or trigger on button)
+  }, []);
 
   function bestIntelligences() {
     const entries = Object.entries(scores).sort((a, b) => b[1] - a[1]);
     return entries.slice(0, 3).map(e => e[0]);
   }
 
-  // compute max possible per intelligence (number of questions for that intelligence * 3)
   const maxPer = {};
   questions.forEach(q => {
     maxPer[q.intelligence] = (maxPer[q.intelligence] || 0) + Math.max(...q.options.map(o => o.value));
@@ -211,13 +220,24 @@ function ResultsView({ scores, studentName, onReset, level, questions }) {
     <div className="app-root">
       <div className="card">
         <header className="header">
-          <h1>Résultats — <span className="level-sub">{level === 'level1' ? 'Classe 9' : level === 'level2' ? 'Classe 10' : level === 'level3' ? 'Classe 11' : 'Classe 12'}</span></h1>
+          <h1>
+            Results —{" "}
+            <span className="level-sub">
+              {level === "level1"
+                ? "Grade 9"
+                : level === "level2"
+                ? "Grade 10"
+                : level === "level3"
+                ? "Grade 11"
+                : "Grade 12"}
+            </span>
+          </h1>
         </header>
 
         <div className="results-grid">
           <div>
-            <h2>Nom : {studentName}</h2>
-            <h2>Vos scores par intelligence</h2>
+            <h2>Name: {studentName}</h2>
+            <h2>Your scores by intelligence</h2>
             <ul className="results-list">
               {labels.map((lab, i) => (
                 <li key={lab}>
@@ -233,12 +253,14 @@ function ResultsView({ scores, studentName, onReset, level, questions }) {
             </div>
 
             <div className="mt-4">
-              <button className="btn btn-primary" onClick={onReset}>🔄 Réinitialiser</button>
+              <button className="btn btn-primary" onClick={onReset}>
+                🔄 Reset
+              </button>
             </div>
           </div>
 
           <div>
-            <h2>Visualisation</h2>
+            <h2>Visualization</h2>
             <div className="chart-frame mt-2">
               <div className="bar-chart">
                 {labels.map((lab, i) => {
@@ -247,7 +269,12 @@ function ResultsView({ scores, studentName, onReset, level, questions }) {
                     <div className="bar-row" key={lab}>
                       <div className="bar-label">{lab}</div>
                       <div className="bar-outer">
-                        <div className="bar-inner" style={{ width: `${pct}%` }} aria-valuenow={values[i]} aria-valuemax={maxPer[lab]}>
+                        <div
+                          className="bar-inner"
+                          style={{ width: `${pct}%` }}
+                          aria-valuenow={values[i]}
+                          aria-valuemax={maxPer[lab]}
+                        >
                           <span className="bar-value">{values[i]}</span>
                         </div>
                       </div>
